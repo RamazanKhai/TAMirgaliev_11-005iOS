@@ -5,7 +5,7 @@ var countPeopleInCommand : Int = 5
 
  
 
-struct SimplePlayer{
+struct SimplePlayer {
     var hp : Int
     var damage : Int
     var isAlive : Bool = true
@@ -26,12 +26,11 @@ struct SimplePlayer{
 
 
 
-class Command{
-    var  name : String
+class Command {
+    var name: String
     var allPlayers = [SimplePlayer]()
-    var weapon : Int = 0
-    var heal : Int = 0
-    
+    var weapon: Int = 0
+    var heal: Int = 0
     
     init(name : String) {
         self.name = name
@@ -39,16 +38,18 @@ class Command{
     
     
     func isAlive() -> Bool { // проверка остался ли уто-то живой в команде
-        if(countOfAlivePersons() < 1){
+        if countOfAlivePersons() < 1 {
             return false
-        }else{return true}
+        } else {
+            return true
+        }
     }
     
     func countOfAlivePersons() -> Int {
         var countOfAlive = 0
         
         for i in 0..<allPlayers.count {
-            if(allPlayers[i].isAlive){
+            if allPlayers[i].isAlive {
                 countOfAlive += 1
             }
         }
@@ -57,10 +58,10 @@ class Command{
     
     func minusHp(hp: Int){
         for i in 0..<allPlayers.count {
-            if (allPlayers[i].hp-hp<1) {
+            if allPlayers[i].hp-hp<1 {
                 allPlayers[i].isAlive = false
                 allPlayers[i].hp = 0
-            }else{
+            } else {
                 allPlayers[i].hp = allPlayers[i].hp - hp
            }
         }
@@ -80,6 +81,7 @@ class Command{
 }
 
 var allCommands = [Command]()
+
 class Game{
 
     func createACommads() -> Void{ // заполнение команд играками
@@ -92,34 +94,30 @@ class Game{
     }
     
     func findLoot(){
-        print()
-        print("Finding loot... xxxx")
+        print("\nFinding loot... xxxx")
         for command in allCommands {
             let random = Int.random(in: 0...10)
-            if (random > 7) {
-                let newWeapon = Int.random(in: 1...3)
-                if newWeapon > command.weapon {
-                    command.weapon = newWeapon
-                    print("\(command.name) find weapon damage \(newWeapon)")
-                }
+            let newWeapon = Int.random(in: 1...3)
+            if (random > 7 && newWeapon > command.weapon) {
+                command.weapon = newWeapon
+                print("\(command.name) find weapon damage \(newWeapon)")
             }else if (random > 3){
                 command.heal = Int.random(in: 1...3)
                 print("\(command.name) find heal \(command.heal)")
-            }else{print("\(command.name) found nothing")}
+            }else { print("\(command.name) found nothing\n") }
         }
-        print()
     }
     
     func heal(){
-        for i in 0..<allCommands.count {
-            for j in 0..<allCommands[i].allPlayers.count {
-                if (allCommands[i].allPlayers[j].hp + allCommands[i].heal > 10 ){
-                    allCommands[i].allPlayers[j].hp = 10
+        for comandIndex in 0..<allCommands.count {
+            for j in 0..<allCommands[comandIndex].allPlayers.count {
+                if (allCommands[comandIndex].allPlayers[j].hp + allCommands[comandIndex].heal > 10 ){
+                    allCommands[comandIndex].allPlayers[j].hp = 10
                 } else {
-                    allCommands[i].allPlayers[j].hp += allCommands[i].heal
+                    allCommands[comandIndex].allPlayers[j].hp += allCommands[comandIndex].heal
                 }
             }
-            allCommands[i].heal = 0
+            allCommands[comandIndex].heal = 0
         }
         
     }
@@ -150,7 +148,7 @@ class Game{
     }
 }
 
-var game = Game.init()
+var game = Game()
 game.createACommads()
 game.round()
 
