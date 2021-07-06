@@ -15,12 +15,12 @@ struct Person {
     var password: String
 }
 
-class CheckInController: UIViewController {
+class CheckInViewController: UIViewController {
     
     public static var dataSourceAccaunts: [Person] = []
     
     func getDataSource() -> [Person] {
-        return CheckInController.dataSourceAccaunts
+        return CheckInViewController.dataSourceAccaunts
     }
     
     // MARK: - TextFields
@@ -31,17 +31,17 @@ class CheckInController: UIViewController {
     @IBOutlet weak var emailAccaunt: UITextField!
     @IBOutlet weak var passwordAccaunt: UITextField!
     @IBOutlet weak var reapetPasswordAccunt: UITextField!
+    @IBOutlet weak var showButton: UIButton!
     
     // MARK: - Labels
     
     @IBOutlet weak var notificationLabel: UILabel!
     
-
     override func viewDidLoad() {
             super.viewDidLoad()
                 // кнопка перехода на предидущий экран
             self.navigationItem.hidesBackButton = true
-        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItem.Style.plain, target: self, action: #selector(CheckInController.back(sender:)))
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItem.Style.plain, target: self, action: #selector(CheckInViewController.back(sender:)))
             self.navigationItem.leftBarButtonItem = newBackButton
         }
 
@@ -52,25 +52,25 @@ class CheckInController: UIViewController {
     
     // MARK: - Buttons
     
-    @IBAction func SaveProfileButton(_ sender: Any) {
+    @IBAction func didClickSaveProfileButton(_ sender: Any) {
          // Нужно сделать проверку на то не было ли такого же email до этого
         if let emailAccountText = emailAccaunt.text?.lowercased(),
            emailAccountText.contains("@"), passwordAccaunt.text == reapetPasswordAccunt.text {
             
-            CheckInController.dataSourceAccaunts.append(Person(login: loginOfAccaunt.text!, name: nameAccaunt.text!, surName: surnameAccaunt.text!, email: emailAccaunt.text!, password: passwordAccaunt.text!))
+            CheckInViewController.dataSourceAccaunts.append(Person(login: loginOfAccaunt.text!, name: nameAccaunt.text!, surName: surnameAccaunt.text!, email: emailAccaunt.text!, password: passwordAccaunt.text!))
             notificationLabel.text = "Your Profile succesfully added"
             notificationLabel.isHidden = false
-            print(CheckInController.dataSourceAccaunts.count)
+            print(CheckInViewController.dataSourceAccaunts.count)
         } else {
             notificationLabel.text = "Somthing go wrong, check what you write!"
             notificationLabel.isHidden = false
         }
     }
     
-    // MARK: - скрытие и появление пароля
-    @IBOutlet weak var showButton: UIButton!
+    // MARK: - скрытие и появление пароля для двух полей
+    
     var countOfTaping: Int = 0
-    @IBAction func passwordShowButton(_ sender: Any) {
+    @IBAction func didClickPasswordShowButton(_ sender: Any) {
         if countOfTaping % 2 == 0 /*&& passwordAccaunt.text != "" */ {
             passwordAccaunt.isSecureTextEntry = false
             countOfTaping += 1
@@ -81,7 +81,7 @@ class CheckInController: UIViewController {
     }
     
     var ReapetCountOfTaping: Int = 0
-    @IBAction func reapeatPasswordShowButton(_ sender: Any) {
+    @IBAction func didClickReapeatPasswordShowButton(_ sender: Any) {
         if ReapetCountOfTaping % 2 == 0 /* && passwordAccaunt.text != "" */{
             reapetPasswordAccunt.isSecureTextEntry = false
             

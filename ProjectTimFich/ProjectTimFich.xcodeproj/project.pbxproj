@@ -11,6 +11,9 @@
 		E546AB6626927ABE0003CD0B /* CheckInStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E546AB6526927ABE0003CD0B /* CheckInStoryboard.storyboard */; };
 		E56F1D7526930C510075283D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56F1D7426930C510075283D /* SettingsViewController.swift */; };
 		E5822A3F2692E6460012C7B1 /* GeneralScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5822A3E2692E6460012C7B1 /* GeneralScreen.storyboard */; };
+		E5A99040269431F400386BC5 /* DataOfAccauntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A9903F269431F400386BC5 /* DataOfAccauntViewController.swift */; };
+		E5A990432694554E00386BC5 /* ScreenOfAllNotification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5A990422694554E00386BC5 /* ScreenOfAllNotification.storyboard */; };
+		E5A990462694571A00386BC5 /* ScrrenOfAdding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5A990452694571A00386BC5 /* ScrrenOfAdding.storyboard */; };
 		E5E1238826921DB2002CF8EB /* CheckInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E1238726921DB2002CF8EB /* CheckInController.swift */; };
 		E5FA81D52690A6ED00AB89C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FA81D42690A6ED00AB89C6 /* AppDelegate.swift */; };
 		E5FA81D72690A6ED00AB89C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FA81D62690A6ED00AB89C6 /* SceneDelegate.swift */; };
@@ -25,6 +28,9 @@
 		E546AB6526927ABE0003CD0B /* CheckInStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckInStoryboard.storyboard; sourceTree = "<group>"; };
 		E56F1D7426930C510075283D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E5822A3E2692E6460012C7B1 /* GeneralScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GeneralScreen.storyboard; sourceTree = "<group>"; };
+		E5A9903F269431F400386BC5 /* DataOfAccauntViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataOfAccauntViewController.swift; sourceTree = "<group>"; };
+		E5A990422694554E00386BC5 /* ScreenOfAllNotification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScreenOfAllNotification.storyboard; sourceTree = "<group>"; };
+		E5A990452694571A00386BC5 /* ScrrenOfAdding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScrrenOfAdding.storyboard; sourceTree = "<group>"; };
 		E5E1238726921DB2002CF8EB /* CheckInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInController.swift; sourceTree = "<group>"; };
 		E5FA81D12690A6ED00AB89C6 /* ProjectTimFich.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectTimFich.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5FA81D42690A6ED00AB89C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,11 +73,36 @@
 		E5822A392692E4D70012C7B1 /* General Screen */ = {
 			isa = PBXGroup;
 			children = (
+				E5A9903E269431C100386BC5 /* Data of accaunt */,
 				E56F1D7326930C2C0075283D /* Setings */,
 				E546AB6226925A290003CD0B /* GeneralController.swift */,
 				E5822A3E2692E6460012C7B1 /* GeneralScreen.storyboard */,
 			);
 			path = "General Screen";
+			sourceTree = "<group>";
+		};
+		E5A9903E269431C100386BC5 /* Data of accaunt */ = {
+			isa = PBXGroup;
+			children = (
+				E5A9903F269431F400386BC5 /* DataOfAccauntViewController.swift */,
+			);
+			path = "Data of accaunt";
+			sourceTree = "<group>";
+		};
+		E5A990412694551D00386BC5 /* Screen of all notifications */ = {
+			isa = PBXGroup;
+			children = (
+				E5A990422694554E00386BC5 /* ScreenOfAllNotification.storyboard */,
+			);
+			path = "Screen of all notifications";
+			sourceTree = "<group>";
+		};
+		E5A990442694567E00386BC5 /* Screen of adding */ = {
+			isa = PBXGroup;
+			children = (
+				E5A990452694571A00386BC5 /* ScrrenOfAdding.storyboard */,
+			);
+			path = "Screen of adding";
 			sourceTree = "<group>";
 		};
 		E5FA81C82690A6ED00AB89C6 = {
@@ -93,6 +124,8 @@
 		E5FA81D32690A6ED00AB89C6 /* ProjectTimFich */ = {
 			isa = PBXGroup;
 			children = (
+				E5A990442694567E00386BC5 /* Screen of adding */,
+				E5A990412694551D00386BC5 /* Screen of all notifications */,
 				E5822A392692E4D70012C7B1 /* General Screen */,
 				E546AB6426927A810003CD0B /* Check In */,
 				E5FA81D42690A6ED00AB89C6 /* AppDelegate.swift */,
@@ -163,8 +196,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5A990432694554E00386BC5 /* ScreenOfAllNotification.storyboard in Resources */,
 				E5FA81E12690A6ED00AB89C6 /* LaunchScreen.storyboard in Resources */,
 				E546AB6626927ABE0003CD0B /* CheckInStoryboard.storyboard in Resources */,
+				E5A990462694571A00386BC5 /* ScrrenOfAdding.storyboard in Resources */,
 				E5FA81DE2690A6ED00AB89C6 /* Assets.xcassets in Resources */,
 				E5FA81DC2690A6ED00AB89C6 /* Main.storyboard in Resources */,
 				E5822A3F2692E6460012C7B1 /* GeneralScreen.storyboard in Resources */,
@@ -183,6 +218,7 @@
 				E5FA81D52690A6ED00AB89C6 /* AppDelegate.swift in Sources */,
 				E5E1238826921DB2002CF8EB /* CheckInController.swift in Sources */,
 				E5FA81D72690A6ED00AB89C6 /* SceneDelegate.swift in Sources */,
+				E5A99040269431F400386BC5 /* DataOfAccauntViewController.swift in Sources */,
 				E56F1D7526930C510075283D /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

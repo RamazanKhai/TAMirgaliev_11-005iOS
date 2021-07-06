@@ -27,11 +27,6 @@ class ViewController: UIViewController {
     
     @IBAction func signInButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
-        let check = CheckInController()
-        var persons: [Any] = check.getDataSource()
-        print(persons.count)
-        for person in persons {
-         }
     }
     
 }
